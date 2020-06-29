@@ -1,0 +1,38 @@
+{
+  "name": "mini.req.js",
+  "version": "1.0.0",
+  "description": "tiny,mini,easy,light weight http client (request) framework for both browser and nodejs",
+  "source": "index.js",
+  "main": "dist/mini.req.js",
+  "module": "dist/mini.req.module.js",
+  "unpkg": "dist/mini.req.umd.js", 
+  "scripts": {
+    "build": "microbundle", 
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apporoad/mini.req.js.git"
+  },
+  "keywords": [
+    "tiny",
+    "mini",
+    "easy",
+    "light",
+    "weight",
+    "http",
+    "client",
+    "(request)",
+    "browser",
+    "nodejs"
+  ],
+  "author": "appporoad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apporoad/mini.req.js/issues"
+  },
+  "homepage": "https://github.com/apporoad/mini.req.js#readme",
+  "devDependencies": {
+    "microbundle": "^0.12.2"
+  }
+}
