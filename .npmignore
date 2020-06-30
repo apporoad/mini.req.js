@@ -109,3 +109,8 @@ test/
 mini.req.js
 
 test.js
+
+index.js
+dist/mini.req.modern.js
+
+dist/mini.req.req.module.js

@@ -90,3 +90,14 @@ ps: download : [mini.req.js](./mini.req.js)
         }
     )
 ```
+
+
+## publish
+```bash
+npm run build
+mv -f dist/mini.req.umd.js ./mini.req.js
+rm -f dist/mini.req.esm.js
+rm -f dist/mini.req.modern.js
+npm publish 
+
+```
