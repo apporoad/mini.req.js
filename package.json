@@ -1,6 +1,6 @@
 {
   "name": "mini.req.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "tiny,mini,easy,light weight http client (request) framework for both browser and nodejs",
   "source": "index.js",
   "main": "dist/mini.req.js",
