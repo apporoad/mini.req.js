@@ -4,7 +4,7 @@
 // cd test
 // aok . -p 10000
 
-const req = require('./index')
+const req = require('./dist/mini.req')
 
 req('http://localhost:10000/abc', 'get',{ hello : 'good good day'}).then(
     d=>{

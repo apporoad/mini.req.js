@@ -284,10 +284,10 @@ const req = async (url,method,data,options)=>{
             return Promise.resolve(null)
         })
     }else{
-        return await client(url, { method: method, body: body })
+        return await client(url, { method: method, body: data })
     }
 }
-module.exports = req
+
 req.get =async (url,data,options)=>{
     return req(url,'GET',data,options)
 }
@@ -300,3 +300,5 @@ req.put = (url,data,options)=>{
 req.delete = (url,data,options) =>{
     return req(url,'DELETE',data,options)
 }
+
+export default req
