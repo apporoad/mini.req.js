@@ -3,7 +3,7 @@
 <script>
 
     var req = require ? require('min.req.js') : miniReq
-    req('http://localhost:10000/abc', 'get', {
+    req('http://localhost:19999/abc', 'get', {
         hello: 'good good day'
     }).then(
         d => {
@@ -11,7 +11,7 @@
         }
     )
 
-    req.get('http://localhost:10000/abc?a=1', {
+    req.get('http://localhost:19999/abc?a=1', {
         hello: 'get'
     }).then(
         d => {
@@ -19,7 +19,7 @@
         }
     )
 
-    req.post('http://localhost:10000/ssabc', {
+    req.post('http://localhost:19999/ssabc', {
         hello: 'post'
     }).then(
         d => {
@@ -27,7 +27,7 @@
         }
     )
 
-    req.put('http://localhost:10000/abc', {
+    req.put('http://localhost:19999/abc', {
         hello: 'put'
     }).then(
         d => {
@@ -35,7 +35,7 @@
         }
     )
 
-    req.delete('http://localhost:10000/abc?a=2', {
+    req.delete('http://localhost:19999/abc?a=2', {
         hello: 'del'
     }).then(
         d => {

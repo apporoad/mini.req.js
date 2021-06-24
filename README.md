@@ -11,13 +11,13 @@ using microbundule
 ```bash
 npm run build
 
-cp -f dist/min.req.umd.js test/static/req.min.js
+cp -f dist/mini.req.umd.js test/static/req.mini.js
 
 npm i -g aok.js
 
-aok test -s test/static -p 10000
+aok test -s test/static -p 19999
 
-#http://localhost:10000/index.html
+#http://localhost:19999/index.html
 
 ```
 or 
@@ -25,13 +25,13 @@ using browserify
 
 ```bash
 npm i -g browserify
-browserify -r ./index.js:min.req.js -o test/static/min.req.js
+browserify -r ./index.js:mini.req.js -o test/static/mini.req.js
 
 npm i -g aok.js
 
-aok test -s test/static -p 10000
+aok test -s test/static -p 19999
 
-#http://localhost:10000/index.html
+#http://localhost:19999/index.html
 ```
 
 ## install
@@ -50,7 +50,7 @@ ps: download : [mini.req.js](./mini.req.js)
     //when node or browserify :  require('min.req.js')
     //when in html :  just try miniReq
     var req = require ? require('min.req.js') : miniReq
-    req('http://localhost:10000/abc', 'get', {
+    req('http://localhost:19999/abc', 'get', {
         hello: 'good good day'
     }).then(
         d => {
@@ -58,7 +58,7 @@ ps: download : [mini.req.js](./mini.req.js)
         }
     )
 
-    req.get('http://localhost:10000/abc?a=1', {
+    req.get('http://localhost:19999/abc?a=1', {
         hello: 'get'
     }).then(
         d => {
@@ -66,7 +66,7 @@ ps: download : [mini.req.js](./mini.req.js)
         }
     )
 
-    req.post('http://localhost:10000/ssabc', {
+    req.post('http://localhost:19999/ssabc', {
         hello: 'post'
     }).then(
         d => {
@@ -74,7 +74,7 @@ ps: download : [mini.req.js](./mini.req.js)
         }
     )
 
-    req.put('http://localhost:10000/abc', {
+    req.put('http://localhost:19999/abc', {
         hello: 'put'
     }).then(
         d => {
@@ -82,7 +82,7 @@ ps: download : [mini.req.js](./mini.req.js)
         }
     )
 
-    req.delete('http://localhost:10000/abc?a=2', {
+    req.delete('http://localhost:19999/abc?a=2', {
         hello: 'del'
     }).then(
         d => {

@@ -1,14 +1,14 @@
 {
   "name": "mini.req.js",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "tiny,mini,easy,light weight http client (request) framework for both browser and nodejs",
   "source": "index.js",
   "main": "dist/mini.req.js",
-  "unpkg": "dist/mini.req.umd.js", 
+  "unpkg": "dist/mini.req.umd.js",
   "scripts": {
-    "build": "microbundle --name miniReq  --no-sourcemap", 
+    "build": "microbundle --name miniReq  --no-sourcemap",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "help" : "microbundle -h"
+    "help": "microbundle -h"
   },
   "repository": {
     "type": "git",

@@ -46,7 +46,7 @@ if (isNode) {
             this.coreOptions = {}
 
             this.resOptions = {
-                'maxBuffer': 50 * 1000000 // 50 MB
+                'maxBuffer': 50 * 1999900 // 50 MB
             }
 
             return this
@@ -268,9 +268,12 @@ if (isNode) {
 const req = async (url,method,data,options)=>{
     options = options || {}
     if(isNode){
-        var r = new client(url, method)
+        var r = new client(url, method.toUpperCase())
         if(data){
             r.body(data)
+        }
+        if(options.headers){
+            r.reqHeaders = options.headers
         }
         return r.send().then((res) => {
             if(res && res.headers){
@@ -284,7 +287,12 @@ const req = async (url,method,data,options)=>{
             return Promise.resolve(null)
         })
     }else{
-        return await client(url, { method: method, body: data })
+        return await client(url, { 
+            method: method.toUpperCase(),
+            body: data , 
+            type : options.type, 
+            headers: options.headers 
+        })
     }
 }
 
@@ -301,4 +309,5 @@ req.delete = (url,data,options) =>{
     return req(url,'DELETE',data,options)
 }
 
-export default req
+//export default req
+module.exports = req
