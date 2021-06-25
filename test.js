@@ -40,7 +40,8 @@ req('http://localhost:19999/abc', 'post',{ hello : 'good good day'} , {
     headers: {
         sessionId : 'xxxxxxxxaaaaaaa',
         reqId : 'ccccccccccccc'
-    }
+    },
+    type : 'form'
 }).then(
     d=>{
         console.log(d)
