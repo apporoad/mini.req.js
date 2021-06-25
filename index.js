@@ -70,7 +70,7 @@ if (isNode) {
 
         body(data, sendAs) {
             this.sendDataAs = typeof data === 'object' && !sendAs && !Buffer.isBuffer(data) ? 'json' : (sendAs ? sendAs.toLowerCase() : 'buffer')
-            this.data = this.sendDataAs === 'form' ? qs.stringify(data) : (this.sendDataAs === 'json' ? JSON.stringify(data) : data)
+            this.data = (this.sendDataAs === 'form' || this.sendDataAs === 'form-data') ? qs.stringify(data) : (this.sendDataAs === 'json' ? JSON.stringify(data) : data)
 
             return this
         }
@@ -117,7 +117,7 @@ if (isNode) {
                     if (!this.reqHeaders.hasOwnProperty('content-type')) {
                         if (this.sendDataAs === 'json') {
                             this.reqHeaders['content-type'] = 'application/json'
-                        } else if (this.sendDataAs === 'form') {
+                        } else if (this.sendDataAs === 'form' || this.sendDataAs ===  'form-data') {
                             this.reqHeaders['content-type'] = 'application/x-www-form-urlencoded'
                         }
                     }
@@ -223,7 +223,7 @@ if (isNode) {
             const request = new XMLHttpRequest()
             request.open(method, url, true)
 
-            if (body instanceof FormData || type === 'form-data') {
+            if (body instanceof FormData || type === 'form-data' || type === 'form') {
                 request.setRequestHeader('Content-Type', 'multipart/form-data')
             } else if ((body !== null && typeof body === 'object') || type === 'json') {
                 if (typeof body === 'object') {
@@ -270,7 +270,8 @@ const req = async (url,method,data,options)=>{
     if(isNode){
         var r = new client(url, method.toUpperCase())
         if(data){
-            r.body(data)
+            var sendAs = options.type || null
+            r.body(data , sendAs)
         }
         if(options.headers){
             r.reqHeaders = options.headers

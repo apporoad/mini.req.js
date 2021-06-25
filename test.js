@@ -36,7 +36,7 @@ const req = require('./index')
 //     }
 // )
 
-req('http://localhost:19999/abc', 'get',{ hello : 'good good day'} , {
+req('http://localhost:19999/abc', 'post',{ hello : 'good good day'} , {
     headers: {
         sessionId : 'xxxxxxxxaaaaaaa',
         reqId : 'ccccccccccccc'
@@ -46,3 +46,4 @@ req('http://localhost:19999/abc', 'get',{ hello : 'good good day'} , {
         console.log(d)
     }
 )
+

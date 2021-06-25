@@ -89,6 +89,9 @@ ps: download : [mini.req.js](./mini.req.js)
             console.log(d.data)
         }
     )
+
+
+    //type : 'form'  from方式调用
 ```
 
 
